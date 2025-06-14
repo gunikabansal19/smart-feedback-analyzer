@@ -1,0 +1,16 @@
+# Deny access to backend
+<Directory "/backend">
+    Order Deny,Allow
+    Deny from all
+</Directory>
+
+# Deny direct access to uploads
+<FilesMatch "\.(php|sql)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Redirect to HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}

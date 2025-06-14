@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - Smart Feedback Analyzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    body {
+      background-color: #f0f2f5;
+    }
+    .page-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .form-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+    .form-box h3 {
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">Smart Feedback Analyzer</span>
+    </div>
+  </nav>
+
+  <!-- Sign Up Form -->
+  <div class="page-container">
+    <div class="form-box">
+      <h3 class="text-center mb-4">📝 Create Account</h3>
+      <form method="POST" action="../backend/register.php">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder="Create Password" required>
+        </div>
+
+        <!-- Optional for multi-role systems -->
+        <!--
+        <div class="form-group">
+          <label for="role">Register as:</label>
+          <select class="form-control" name="role" required>
+            <option value="user">User</option>
+            <option value="company">Company Manager</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="company_id">Company ID (if any)</label>
+          <input type="number" name="company_id" class="form-control" placeholder="Enter company ID">
+        </div>
+        -->
+
+        <button type="submit" class="btn btn-success btn-block">Register</button>
+      </form>
+      <p class="text-center mt-3">Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5 mb-3">
+    <p>© 2025 Smart Feedback System</p>
+  </footer>
+
+</body>
+</html>
