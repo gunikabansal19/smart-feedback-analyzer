@@ -1,21 +1,24 @@
 <?php
 // backend/db.php
 
-$host     = "localhost";
-$username = "root";
-$password = ""; // Leave empty for default XAMPP setup
-$database = "smart_feedback";
+// Configuration
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'smart_feedback');
 
-// Create connection
-$conn = new mysqli($host, $username, $password, $database);
+// Create Connection
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-// Check connection
+// Connection Error Handling
 if ($conn->connect_error) {
-    die("❌ Database connection failed: " . $conn->connect_error);
+    error_log("❌ Database connection error: " . $conn->connect_error);
+    die("Database error. Please try again later.");
 }
 
-// Set character set (optional but recommended)
+// Set UTF-8 Charset
 if (!$conn->set_charset("utf8mb4")) {
-    die("❌ Error loading character set utf8mb4: " . $conn->error);
+    error_log("❌ Charset error: " . $conn->error);
+    die("Character encoding issue.");
 }
 ?>
